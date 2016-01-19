@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jdmiranda/villagemapserver/issues"
   },
-  "homepage": "https://github.com/jdmiranda/villagemapserver#readme"
+  "homepage": "https://github.com/jdmiranda/villagemapserver#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
