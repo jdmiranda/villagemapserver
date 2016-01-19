@@ -1,0 +1,19 @@
+{
+  "name": "villagemapserver",
+  "version": "1.0.0",
+  "description": "journey church village maps server",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jdmiranda/villagemapserver.git"
+  },
+  "author": "jeremy miranda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdmiranda/villagemapserver/issues"
+  },
+  "homepage": "https://github.com/jdmiranda/villagemapserver#readme"
+}
