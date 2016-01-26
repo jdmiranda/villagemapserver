@@ -1,25 +1,10 @@
-var mongoose = require ('mongoose');
+var mongoose = require('mongoose');
 
-
-var Schema = mongoose.Schema;
-
-// create a schema
-var neighborhoodSchema = new Schema({
-  name: { type: String, required: true, unique: true },
-  address: { type: String, required: true },
+var NeighborhoodSchema = new mongoose.Schema({
+  name: String,
+  address: String,
   lat: Number,
-  long: Number,
-  // meta: {
-  //   age: Number,
-  //   website: String
-  // },
-  created_at: Date,
-  updated_at: Date
+  long: Number
 });
 
-// the schema is useless so far
-// we need to create a model using it
-var NeighborHood = mongoose.model('NeighborHood', neighborhoodSchema);
-
-// make this available to our users in our Node applications
-module.exports = Neighborhood;
+module.exports = mongoose.model('Neighborhood', NeighborhoodSchema);

@@ -5,7 +5,7 @@ var express = require('express'),
     users = require('./lib/users'),
     mongoose = require('mongoose');
 
-    mongoose.connect(' mongodb://heroku-app:journeychurch@ds051655.mongolab.com:51655/journeychurch', function(err){
+    mongoose.connect('mongodb://heroku-app:journeychurch@ds051655.mongolab.com:51655/journeychurch', function(err){
       if(err) {
        console.log('connection error', err);
    } else {
@@ -13,7 +13,7 @@ var express = require('express'),
    }
 });
 
-
+var neighborhoods = require('./routes/neighborhoods');
 
 module.exports = app;
 
@@ -21,7 +21,7 @@ module.exports = app;
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.use('/', routes);
+//app.use('/', routes);
 app.use('/neighborhoods', neighborhoods);
 
 

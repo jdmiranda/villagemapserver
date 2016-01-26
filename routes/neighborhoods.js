@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var NeighborHood = require('../models/neighborHood.js');
+var NeighborHood = require('../models/neighborhood.js');
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
