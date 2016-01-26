@@ -2,7 +2,11 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
-    users = require('./lib/users');
+    users = require('./lib/users'),
+    vogels = require('vogels'),
+    mongoose = require('mongoose');
+
+vogels.AWS.config.loadFromPath('credentials.json');
 
 module.exports = app;
 
