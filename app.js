@@ -3,16 +3,26 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     users = require('./lib/users'),
-    vogels = require('vogels'),
     mongoose = require('mongoose');
 
-vogels.AWS.config.loadFromPath('credentials.json');
+    mongoose.connect(' mongodb://heroku-app:journeychurch@ds051655.mongolab.com:51655/journeychurch', function(err){
+      if(err) {
+       console.log('connection error', err);
+   } else {
+       console.log('connection successful');
+   }
+});
+
+
 
 module.exports = app;
 
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+
+app.use('/', routes);
+app.use('/neighborhoods', neighborhoods);
 
 
 app.get('/users', function(req, res) {
