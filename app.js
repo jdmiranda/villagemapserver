@@ -15,6 +15,9 @@ var express = require('express'),
 
 var neighborhoods = require('./routes/neighborhoods');
 
+// var data = require('./import/data');
+// data.load();
+
 module.exports = app;
 
 
