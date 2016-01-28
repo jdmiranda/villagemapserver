@@ -44,6 +44,7 @@ function processEntry (entry, idx, ary) {
               lat: res[0].latitude,
               lng: res[0].longitude
             });
+            aGoodOne.save(function(err){});
             console.log(aGoodOne);
           })
           .catch(function(err) {
