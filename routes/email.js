@@ -7,7 +7,9 @@ router.post('/', function(req, res, next) {
   var body = req.body.body;
   var subject = req.body.subject;
   sendgrid.send({
-    to:       'jeremy.d.miranda@gmail.com',
+    to:       'susanne@journeyfranklin.com',
+    cc:       'village@journeyfranklin.com',
+    bcc:      'jeremy.d.miranda@gmail.com',
     from:     sender,
     subject:  subject,
     text:     body
