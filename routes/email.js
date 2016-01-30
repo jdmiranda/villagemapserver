@@ -14,12 +14,11 @@ var sendgrid  = require('sendgrid')(sendgridAk);
 //   console.log(json);
 // });
 
-router.post('/', function(req, res, next) {
-  var sender = req.query('from');
-  var body = req.param('body');
-  var subjectVillageName = req.param('subject');
+router.get('/:sender/:subject/:body', function(req, res, next) {
+  var sender = req.params['sender'];
+  var body = req.param['body'];
+  var subjectVillageName = req.params['subject'];
   console.log("params:" +req.params);
-  console.lob('body:' +req.body);
 
   sendgrid.send({
     to:       'jeremy.d.miranda@gmail.com',
