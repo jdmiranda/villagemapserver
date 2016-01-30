@@ -1,7 +1,7 @@
 var express = require('express');
 
 var router = express.Router();
-var email = new sendgrid.Email();
+//var email = new sendgrid.Email();
 var sendgridAk = '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'
 var sendgrid  = require('sendgrid')(sendgridAk);
 // sendgrid.send({
