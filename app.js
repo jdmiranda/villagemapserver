@@ -20,8 +20,10 @@ module.exports = app;
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-
-//app.use('/', routes);
 app.use('/neighborhoods', require('./routes/neighborhoods'));
-//app.use('/email', require('.routes/email'));
+app.use('/email', require('./routes/email'));
+
+
+
 app.listen(port, function(){});
+console.log('started app');
