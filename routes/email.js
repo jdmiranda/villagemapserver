@@ -18,6 +18,11 @@ router.post('/', function(req, res, next) {
   var sender = req.param('from');
   var body = req.param('body');
   var subjectVillageName = req.param('subject');
+
+  console.log("sender: " + sender);
+  console.log("body: " + body);
+  console.log("subject: " + subjectVillageName);
+  console.log('getting that email ready to send');
   sendgrid.send({
     to:       'jeremy.d.miranda@gmail.com',
     from:     sender,
