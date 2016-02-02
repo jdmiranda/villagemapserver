@@ -9,7 +9,6 @@ router.post('/', function(req, res, next) {
   sendgrid.send({
     to:       'susanne@journeyfranklin.com',
     cc:       'village@journeyfranklin.com',
-    bcc:      'jeremy.d.miranda@gmail.com',
     from:     sender,
     subject:  subject,
     text:     body
