@@ -1,0 +1,38 @@
+12:20:30.048434 == Info: Rebuilt URL to: http://google.com/
+12:20:30.084900 == Info:   Trying 74.125.21.101...
+12:20:30.128102 == Info: Connected to google.com (74.125.21.101) port 80 (#0)
+12:20:30.128171 => Send header, 74 bytes (0x4a)
+0000: GET / HTTP/1.1
+0010: Host: google.com
+0022: User-Agent: curl/7.43.0
+003b: Accept: */*
+0048: 
+12:20:30.187939 <= Recv header, 32 bytes (0x20)
+0000: HTTP/1.1 301 Moved Permanently
+12:20:30.187979 <= Recv header, 34 bytes (0x22)
+0000: Location: http://www.google.com/
+12:20:30.187996 <= Recv header, 40 bytes (0x28)
+0000: Content-Type: text/html; charset=UTF-8
+12:20:30.188011 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 22 Feb 2016 18:20:30 GMT
+12:20:30.188025 <= Recv header, 40 bytes (0x28)
+0000: Expires: Wed, 23 Mar 2016 18:20:30 GMT
+12:20:30.188039 <= Recv header, 40 bytes (0x28)
+0000: Cache-Control: public, max-age=2592000
+12:20:30.188054 <= Recv header, 13 bytes (0xd)
+0000: Server: gws
+12:20:30.188065 <= Recv header, 21 bytes (0x15)
+0000: Content-Length: 219
+12:20:30.188077 <= Recv header, 33 bytes (0x21)
+0000: X-XSS-Protection: 1; mode=block
+12:20:30.188091 <= Recv header, 29 bytes (0x1d)
+0000: X-Frame-Options: SAMEORIGIN
+12:20:30.188104 <= Recv header, 2 bytes (0x2)
+0000: 
+12:20:30.188113 <= Recv data, 219 bytes (0xdb)
+0000: <HTML><HEAD><meta http-equiv="content-type" content="text/html;c
+0040: harset=utf-8">.<TITLE>301 Moved</TITLE></HEAD><BODY>.<H1>301 Mov
+0080: ed</H1>.The document has moved.<A HREF="http://www.google.com/">
+00c0: here</A>.
+00cb: </BODY></HTML>
+12:20:30.188201 == Info: Connection #0 to host google.com left intact
