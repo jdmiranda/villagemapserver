@@ -8,8 +8,11 @@ var options = {
 
 
 var processGroup = function(group){
-  NeighborHood.findById(group.id, function (err, post) {
-    if (err) return next(err);
+  Neighborhood.findById(group.id, function (err, post) {
+    if (err) {
+      console.log(err);
+      return;
+    };
     console.log('found: ' + group.name);
   });
 };
