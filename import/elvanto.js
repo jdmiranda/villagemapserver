@@ -24,16 +24,16 @@ var options = {
 };
 
 var lookupAddress = function(neighborhood, address){
-  console.log('looking up new address ');
   geocoder.geocode(address)
   .then(function(res) {
     neighborhood.lat = res[0].latitude,
     neighborhood.lng = res[0].longitude
+    console.log('saving')
+    neighborhood.save();
   })
   .catch(function(err) {
     console.log(err);
   });
-  return neighborhood;
 };
 
 var createNeighborhood = function (group, address){
@@ -46,10 +46,11 @@ var createNeighborhood = function (group, address){
     id: group.id,
     name: group.name,
     address: address,
-    status: group.status
+    status: group.status,
   });
-  var updatedNeighborhood = lookupAddress(newNeighborhood, address);
   newNeighborhood.save();
+
+  lookupAddress(newNeighborhood, address);
   console.log('saved ' + newNeighborhood.name);
 };
 
@@ -60,10 +61,8 @@ var processGroup = function(group){
       if (err) return  console.log(err);
       if (foundGroup){
         var saveGroup = foundGroup;
-        if (foundGroup.address != groupAddress){
-          console.log('old address: ' + foundGroup.address);
-          console.log('new address: ' + groupAddress);
-          saveGroup = lookupAddress(foundGroup, groupAddress);
+        if (foundGroup.address != groupAddress || isNaN(foundGroup.lat) || isNaN(foundGroup.lng)){
+          lookupAddress(foundGroup, groupAddress);
         }
 
         saveGroup.name = group.name;
