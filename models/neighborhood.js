@@ -5,7 +5,9 @@ var NeighborhoodSchema = new mongoose.Schema({
   name: String,
   address: String,
   lat: Number,
-  lng: Number
+  lng: Number,
+  status: String,
+  
 });
 
 module.exports = mongoose.model('Neighborhood', NeighborhoodSchema);
