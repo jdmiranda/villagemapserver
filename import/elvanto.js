@@ -86,7 +86,7 @@ var ElvantoImport = function(){
   };
 
 var CronJob = require('cron').CronJob;
-  var job = new CronJob('00 00 * * * *', function() {
+  var job = new CronJob('00 * * * * *', function() {
     console.log('starting elvanto import job');
     var req = require('http').request(options, callback).end();
   }, null, true, 'America/Los_Angeles');
