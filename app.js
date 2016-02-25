@@ -4,10 +4,11 @@ var express = require('express'),
     morgan = require('morgan'),
     cors = require('cors'),
     mongoose = require('mongoose');
+    var dotenv = require('dotenv').config();
 
     port = process.env.PORT || 3000;
-
-    mongoose.connect('mongodb://heroku-app:journeychurch@ds051655.mongolab.com:51655/journeychurch', function(err){
+    var connection = 'mongodb://' + process.env.MONGODB;
+    mongoose.connect(connection, function(err){
       if(err) {
        console.log('connection error', err);
    } else {

@@ -1,19 +1,9 @@
 var ElvantoImport = function(){
-  console.log('inside elvantoImport');
-  var mongoose = require('mongoose');
-  mongoose.connect('mongodb://heroku-app:journeychurch@ds051655.mongolab.com:51655/journeychurch', function(err){
-    if(err) {
-      console.log('connection error', err);
-    } else {
-      console.log('connection successful');
-    }
-  });
-
   var Neighborhood = require('../models/neighborhood');
   var geocoderProvider = 'google';
   var httpAdapter = 'https';
   var extra = {
-    apiKey: 'AIzaSyA5Db5h9EXZQtKdc2puzX1PyoUxpyT3Ulk', // for Mapquest, OpenCage, Google Premier
+    apiKey: process.env.GOOGLEMAPS_APIKEY, // for Mapquest, OpenCage, Google Premier
     formatter: null         // 'gpx', 'string', ...
   };
   var geocoder = require('node-geocoder')(geocoderProvider, httpAdapter, extra);
@@ -22,7 +12,7 @@ var ElvantoImport = function(){
     host: 'api.elvanto.com',
     port: 80,
     path: '/v1/groups/getAll.json',
-    auth: 'gPUD4UXum3Ui5Nmuuxs0l3F2qkP9PjRW:x'
+    auth: process.env.ELVANTO_APIKEY
   };
 
   var lookupAddress = function(neighborhood, address){

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var NeighborHood = require('../models/neighborhood.js');
 
 router.get('/', function(req, res, next) {
