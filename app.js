@@ -26,3 +26,4 @@ app.use('/neighborhoods', require('./routes/neighborhoods'));
 app.use('/email', require('./routes/email'));
 app.listen(port, function(){});
 console.log('started app');
+require('./import/elvanto').ElvantoImport();
